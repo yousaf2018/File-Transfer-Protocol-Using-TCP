@@ -91,8 +91,8 @@ class MyThread(Thread):
             else:
                 ResponseToClientFilesList= []
                 ResponseToClientFilesList.append("0x0011")
-                ResponseToClientFilesList.append("0")
                 ResponseToClientFilesList.append("No such file is avaiable for download")
+                ResponseToClientFilesList.append("0")
                 ResponseToClientFilesList= json.dumps(ResponseToClientFilesList)
                 self.client.send(ResponseToClientFilesList.encode(self.UTF8))
                 

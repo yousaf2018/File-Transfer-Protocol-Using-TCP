@@ -39,13 +39,12 @@ elif check == "2":
     fileType = data[0]
     fileName = data[1]
     fileSize = data[2]
-    print(fileSize)
-    fileSize = int(fileSize)
-    if fileType == "0x0011" and fileSize == 0:
+    if fileType == "0x0011" and fileSize == "0":
         print(data)
     else:
         print(data)     
         #From server started downloading
+        fileSize = int(fileSize)
         progress = tqdm.tqdm(range(fileSize), f"Receiving {fileName}", unit="B", unit_scale=True, unit_divisor=1024)
         with open(fileName, "wb") as file:
             while True:
